@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4>Projects</h4>
+<a href="/variablecreate/" class="btn btn-success btn-sm mb-3">+ New Project</a>
+<table class="table table-hover">
+    <thead>
+        <tr><th>Company</th><th>Project</th></tr>
+    </thead>
+    <tbody>
+        {% for project in variable_list %}
+        <tr>
+            <td>{{ project.company }}</td>
+            <td>{{ project.name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/" class="btn btn-primary">Back</a>
+{% endblock %}

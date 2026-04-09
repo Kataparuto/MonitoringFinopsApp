@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4>Last Ten Cost Records</h4>
+<a href="/measurementcreate/" class="btn btn-success btn-sm mb-3">+ New Record</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Project</th>
+            <th>Service</th>
+            <th>Amount</th>
+            <th>Region</th>
+            <th>Date Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for m in measurement_list %}
+        <tr>
+            <td>{{ m.project }}</td>
+            <td>{{ m.service }}</td>
+            <td>${{ m.amount }}</td>
+            <td>{{ m.region }}</td>
+            <td>{{ m.dateTime }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/" class="btn btn-primary">Back</a>
+{% endblock %}

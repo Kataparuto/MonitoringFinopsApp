@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4>New Project</h4>
+<form method="POST">
+    {% for field in form %}
+    <div class="form-group">
+        <label>{{ field.label }}</label>
+        {{ field }}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-success">Create</button>
+    <a href="/variables/" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
